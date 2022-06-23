@@ -67,23 +67,27 @@ let rollDice = () => {
 
 let gameOver = () => {
     header.textContent = "You lost!"
-    roll.style.display = "none";
-    start.style.display = "block";
+    roll.style.visibility = "hidden";
     background.style.backgroundColor = "#d96c75";
     setTimeout(function () {
+        roll.style.display = "none";
+        roll.style.visibility = "visible";
         background.style.backgroundColor = "#D7CDCC";
-    }, 700);
+        start.style.display = "block";
+    }, 800);
 }
 
 // Function for when the player wins
 
 let winner = () => {
     header.textContent = "You won!"
-    roll.style.display = "none";
-    start.style.display = "block";
+    roll.style.visibility = "hidden";
     background.style.backgroundColor = "lightgreen";
     setTimeout(function () {
+        roll.style.display = "none";
+        roll.style.visibility = "visible";
         background.style.backgroundColor = "#D7CDCC";
-    }, 700);
+        start.style.display = "block";
+    }, 800);
 }
 
