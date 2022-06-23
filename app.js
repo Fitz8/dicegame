@@ -24,7 +24,7 @@ roll.addEventListener("click", () => {
 
 //Starting a fresh game
 
-let startGame = () => {
+const startGame = () => {
     dicePic.src = "diceFaces/diceplaceholder.png"
     score = 0;
     scoreText.textContent = "Score: 0";
@@ -38,7 +38,7 @@ let startGame = () => {
 
 //Rolling the dice
 
-let rollDice = () => {
+const rollDice = () => {
     let num = Math.floor(Math.random() * 6) + 1;
     dicePic.src = `diceFaces/${num}.png`
     score += num;
@@ -53,7 +53,7 @@ let rollDice = () => {
 
 // Function for when the player loses
 
-let gameOver = () => {
+const gameOver = () => {
     header.textContent = "You lost!"
     roll.style.visibility = "hidden";
     background.style.backgroundColor = "#d96c75";
@@ -67,7 +67,7 @@ let gameOver = () => {
 
 // Function for when the player wins
 
-let winner = () => {
+const winner = () => {
     header.textContent = "You won!"
     roll.style.visibility = "hidden";
     background.style.backgroundColor = "lightgreen";
