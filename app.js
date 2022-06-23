@@ -6,7 +6,8 @@ const start = document.getElementById("start");
 const roll = document.getElementById("roll");
 const scoreText = document.getElementById("score");
 const header = document.getElementById("header");
-const instructions =document.querySelector("p");
+const instructions = document.querySelector("p");
+const placeholder = document.getElementById("placeholder");
 
 //Event listeners for buttons
 
@@ -41,6 +42,7 @@ let startGame = () => {
     instructions.style.display = "none";
     start.textContent = "Play again";
     header.textContent = "Roll the dice!"
+    placeholder.style.display = "block";
 }
 
 //Rolling the dice
