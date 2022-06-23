@@ -10,7 +10,7 @@ body {
     gap: 2%;
     background-color: #D7CDCC;
     font-family: 'Signika Negative', sans-serif;
-    margin: 10px;
+    margin: 0;
     transition: background-color 0.5s ease;
 }
 
