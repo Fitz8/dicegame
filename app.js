@@ -6,6 +6,7 @@ const start = document.getElementById("start");
 const roll = document.getElementById("roll");
 const scoreText = document.getElementById("score");
 const header = document.getElementById("header");
+const instructions =document.querySelector("p");
 
 //Event listeners for buttons
 
@@ -37,6 +38,7 @@ let startGame = () => {
     scoreText.style.display = "block";
     roll.style.display = "block";
     start.style.display = "none";
+    instructions.style.display = "none";
     start.textContent = "Play again";
     header.textContent = "Roll the dice!"
 }
@@ -48,19 +50,15 @@ let rollDice = () => {
     hideDice();
     let Dicepic = document.getElementById(`dice${num}`);
     Dicepic.style.display = "block";
-
-    if (num == 1) {
-        gameOver();
-    } else {
-        score += num;
-        scoreText.textContent = `Score: ${score}`;
-    }
-
+    score += num;
+    scoreText.textContent = `Score: ${score}`;
+    
     if (score > 20) {
         winner();
+    } else if (num == 1) {
+        gameOver();
     }
 }
-
 
 // Function for when the player loses
 
