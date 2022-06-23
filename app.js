@@ -7,8 +7,8 @@ const roll = document.getElementById("roll");
 const scoreText = document.getElementById("score");
 const header = document.getElementById("header");
 const instructions = document.querySelector("p");
-const placeholder = document.getElementById("placeholder");
 const background = document.querySelector("body");
+const dicePic = document.querySelector("img");
 
 //Event listeners for buttons
 
@@ -22,19 +22,10 @@ roll.addEventListener("click", () => {
 
 //Functions
 
-//Hide all dice images
-
-let hideDice = () => {
-    const dice = document.querySelectorAll("img");
-    dice.forEach(image => {
-        image.style.display = "none";
-    });
-}
-
 //Starting a fresh game
 
 let startGame = () => {
-    hideDice();
+    dicePic.src = "diceFaces/diceplaceholder.png"
     score = 0;
     scoreText.textContent = "Score: 0";
     scoreText.style.display = "block";
@@ -43,16 +34,13 @@ let startGame = () => {
     instructions.style.display = "none";
     start.textContent = "Play again";
     header.textContent = "Roll the dice!"
-    placeholder.style.display = "block";
 }
 
 //Rolling the dice
 
 let rollDice = () => {
     let num = Math.floor(Math.random() * 6) + 1;
-    hideDice();
-    let Dicepic = document.getElementById(`dice${num}`);
-    Dicepic.style.display = "block";
+    dicePic.src = `diceFaces/${num}.png`
     score += num;
     scoreText.textContent = `Score: ${score}`;
     

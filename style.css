@@ -33,7 +33,7 @@ p {
     line-height: 50px;
 }
 
-img, #score, #roll {
+#score, #roll {
     display: none;
 }
 
