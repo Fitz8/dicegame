@@ -8,6 +8,7 @@ const scoreText = document.getElementById("score");
 const header = document.getElementById("header");
 const instructions = document.querySelector("p");
 const placeholder = document.getElementById("placeholder");
+const background = document.querySelector("body");
 
 //Event listeners for buttons
 
@@ -68,6 +69,10 @@ let gameOver = () => {
     header.textContent = "You lost!"
     roll.style.display = "none";
     start.style.display = "block";
+    background.style.backgroundColor = "#d96c75";
+    setTimeout(function () {
+        background.style.backgroundColor = "#D7CDCC";
+    }, 700);
 }
 
 // Function for when the player wins
@@ -76,4 +81,9 @@ let winner = () => {
     header.textContent = "You won!"
     roll.style.display = "none";
     start.style.display = "block";
+    background.style.backgroundColor = "lightgreen";
+    setTimeout(function () {
+        background.style.backgroundColor = "#D7CDCC";
+    }, 700);
 }
+
