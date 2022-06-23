@@ -1,11 +1,13 @@
+//Defining global variable for score
 let score;
+
+//Selecting the needed elements
 const start = document.getElementById("start");
 const roll = document.getElementById("roll");
 const scoreText = document.getElementById("score");
 const header = document.getElementById("header");
 
-console.log(scoreText);
-console.log(start);
+//Event listeners for buttons
 
 start.addEventListener("click", () => {
     startGame();
@@ -15,12 +17,18 @@ roll.addEventListener("click", () => {
     rollDice();
 })
 
+//Functions
+
+//Hide all dice images
+
 let hideDice = () => {
     const dice = document.querySelectorAll("img");
     dice.forEach(image => {
         image.style.display = "none";
     });
 }
+
+//Starting a fresh game
 
 let startGame = () => {
     hideDice();
@@ -32,6 +40,8 @@ let startGame = () => {
     start.textContent = "Play again";
     header.textContent = "Roll the dice!"
 }
+
+//Rolling the dice
 
 let rollDice = () => {
     let num = Math.floor(Math.random() * 6) + 1;
@@ -51,56 +61,19 @@ let rollDice = () => {
     }
 }
 
+
+// Function for when the player loses
+
 let gameOver = () => {
     header.textContent = "You lost!"
     roll.style.display = "none";
     start.style.display = "block";
 }
 
+// Function for when the player wins
+
 let winner = () => {
     header.textContent = "You won!"
     roll.style.display = "none";
     start.style.display = "block";
 }
-
-    // let   Textcontent = you lost
-    // Score and roll = hide
-    // Score = 0
-    // Start button = show
-    // }
-
-// Rollbutton onclick {
-
-// Num = randomnum(1-6)
-// Hidealldice() 
-// Dicepic = getelementbyid(num)
-// Dicepic.style.display = block
-
-// If (num = 1) {
-// gameover() 
-// } else { Score += num
-// } 
-
-// If score >20 {
-// Winner() 
-// } 
-
-// gameover() {
-// Dice1=getElementbyid(1)
-// Dice1.style.display = hide
-// Textcontent = you lost
-// Score and roll = hide
-// Score = 0
-// Start button = show
-// }
-
-// Winner() {
-// Textcontent = You win
-// Start button show
-// }
-// } 
-
-// Hidealldice() {
-// Hide = selectalldicepics
-// Hide.Style.Display = none
-// }
