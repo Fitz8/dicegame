@@ -73,6 +73,8 @@ const gameOver = () => {
     roll.style.visibility = "hidden";
     rollText.style.visibility = "hidden";
     background.style.backgroundColor = "#d96c75";
+    
+    //Background transitions back to the usual colour after a pause
     setTimeout(function () {
         rollText.style.visibility = "visible";
         rollText.textContent = "(or press 'e' to restart)";
