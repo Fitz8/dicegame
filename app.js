@@ -60,7 +60,7 @@ const gameOver = () => {
     setTimeout(function () {
         roll.style.display = "none";
         roll.style.visibility = "visible";
-        background.style.backgroundColor = "#D7CDCC";
+        background.style.backgroundColor = "#fff1f0";
         start.style.display = "block";
     }, 800);
 }
@@ -74,7 +74,7 @@ const winner = () => {
     setTimeout(function () {
         roll.style.display = "none";
         roll.style.visibility = "visible";
-        background.style.backgroundColor = "#D7CDCC";
+        background.style.backgroundColor = "#fff1f0";
         start.style.display = "block";
     }, 800);
 }

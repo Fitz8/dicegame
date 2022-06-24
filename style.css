@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2%;
-    background-color: #D7CDCC;
+    background-color: #fff1f0;
     font-family: 'Signika Negative', sans-serif;
     margin: 0;
     transition: background-color 0.5s ease;
@@ -43,6 +43,10 @@ button {
     padding-bottom: 30px;
     padding-left: 100px;
     padding-right: 100px;
+    background-color: #797270;
+    color: white;
+    border-radius: 25px;
+    border: none;
 }
 
 #score {
