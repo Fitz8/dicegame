@@ -9,6 +9,7 @@ const header = document.getElementById("header");
 const instructions = document.querySelector("p");
 const background = document.querySelector("body");
 const dicePic = document.querySelector("img");
+const rollText = document.getElementById("rollText");
 
 //Event listeners for buttons
 
@@ -20,6 +21,18 @@ roll.addEventListener("click", () => {
     rollDice();
 })
 
+//Event listner for keyboard presses
+
+document.addEventListener("keydown", (logkey) => {
+    let keypress = logkey.key;
+    if (keypress == "r" && roll.style.display == "block" && roll.style.visibility != "hidden") {
+        rollDice();
+    } else if (keypress == "e" && start.style.display != "none") {
+        startGame();
+    }
+
+
+});
 //Functions
 
 //Starting a fresh game
@@ -30,10 +43,12 @@ const startGame = () => {
     scoreText.textContent = "Score: 0";
     scoreText.style.display = "block";
     roll.style.display = "block";
+    rollText.style.display = "block";
     start.style.display = "none";
     instructions.style.display = "none";
     start.textContent = "Play again";
     header.textContent = "Roll the dice!"
+    rollText.textContent = "(or press 'r' to roll)"
 }
 
 //Rolling the dice
@@ -56,8 +71,11 @@ const rollDice = () => {
 const gameOver = () => {
     header.textContent = "You lost!"
     roll.style.visibility = "hidden";
+    rollText.style.visibility = "hidden";
     background.style.backgroundColor = "#d96c75";
     setTimeout(function () {
+        rollText.style.visibility = "visible";
+        rollText.textContent = "(or press 'e' to restart)";
         roll.style.display = "none";
         roll.style.visibility = "visible";
         background.style.backgroundColor = "#fff1f0";
@@ -71,7 +89,10 @@ const winner = () => {
     header.textContent = "You won!"
     roll.style.visibility = "hidden";
     background.style.backgroundColor = "lightgreen";
+    rollText.style.visibility = "hidden";
     setTimeout(function () {
+        rollText.style.visibility = "visible";
+        rollText.textContent = "(or press 'e' to restart)";
         roll.style.display = "none";
         roll.style.visibility = "visible";
         background.style.backgroundColor = "#fff1f0";
